@@ -92,4 +92,46 @@ jQuery(function($){
 		});
 	});
 
+	// cosmetics
+	$('#settings-icon').click(function() {
+		$('#settings').toggleClass('settings-open');
+	})
+
+	var cssSel = {
+		"skins" : [
+			{
+				"id" : 0 ,
+				"name" : "Default",
+				"link" : "ticker.css"
+			},
+			{
+				"id" : 1 ,
+				"name" : "Pendual Black",
+				"link" : "css/ticker22black.css"
+			},
+			{
+				"id" : 2 ,
+				"name" : "Pendual Purple",
+				"link" : "css/ticker22purple.css"
+			},
+			{
+				"id" : 3 ,
+				"name" : "Pendual Silver",
+				"link" : "css/ticker22silver.css"
+			}
+		]
+	};
+
+	attatchCSS = function(which){
+		$('#stylesheet').attr('href',cssSel.skins[which].link);
+	};
+
+	$.each(cssSel.skins, function(index, skin){
+		var inside = '<ul class="skinsel" id=' + index + ' >'+ skin.name +'</ul>';
+		$('#settings').append(inside);
+		$('.skinsel#'+index).click(function(){
+			attatchCSS(index);
+		});
+	});
+	
 });

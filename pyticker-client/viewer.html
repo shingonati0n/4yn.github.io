@@ -11,7 +11,10 @@
   <link rel="manifest" href="appmanifest.json">
   <script src="jQuery.js"></script>
   <script src="ticker.js"></script>
-  <link rel="stylesheet" href="ticker.css">
+  <!-- <script id="cssdb" src="js/cssdb.json" type="application/json"></script> -->
+  <!-- <link rel="stylesheet" href="ticker.css"> -->
+  <link id="stylesheet" rel="stylesheet" href="ticker.css">
+  <link rel="stylesheet" href="css/settings.css">
 </head>
 <body>
 	<div id="setup">
@@ -20,4 +23,7 @@
 	</div>
 	<div id="ticker" hidden=true></div>
 	<div id="ticker-ghost" hidden=true>aaaaaaaaa</div>
+  <div id="settings">
+    <div id="settings-icon"></div>
+  </div>
 </body>
