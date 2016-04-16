@@ -3,6 +3,21 @@ jQuery(function($){
 	var WebSocket = window.WebSocket || null;
 	var Deferred = $.Deferred.bind($);
 
+	function enableFullScreen() {
+	  if (!document.fullscreenElement &&    // alternative standard method
+	      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+	    if (document.documentElement.requestFullscreen) {
+	      document.documentElement.requestFullscreen();
+	    } else if (document.documentElement.msRequestFullscreen) {
+	      document.documentElement.msRequestFullscreen();
+	    } else if (document.documentElement.mozRequestFullScreen) {
+	      document.documentElement.mozRequestFullScreen();
+	    } else if (document.documentElement.webkitRequestFullscreen) {
+	      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+	    }
+	  }
+	};
+
 	if(!WebSocket){
 		alert("No Websocket Support!");
 		return;
@@ -21,7 +36,7 @@ jQuery(function($){
 				};
 				_this.ws.onopen = function(e){
 					console.log("opened");
-					setTimeout(_this.requestData,1000);
+					setTimeout(_this.requestData,500);
 					defer.resolve();
 				};
 				_this.ws.onmessage = function(msg){
@@ -42,6 +57,9 @@ jQuery(function($){
 	};
 
 	$('#connect').click(function openConnection(){
+		setTimeout(function(){$('body').scrollTop(1);}, 500);
+		enableFullScreen()
+
 		var remoteAddr = $('#ip-address').val();
 		var remotePort = $('#port').val();
 		$("#connect, #ip-address, #port").attr('disabled', true);
