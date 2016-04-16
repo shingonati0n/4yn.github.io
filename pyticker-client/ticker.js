@@ -73,6 +73,7 @@ jQuery(function($){
 
 		var remoteAddr = $('#ip-address').val();
 		var remotePort = $('#port').val();
+		if(remoteAddr=="") return;
 		$("#connect, #ip-address, #port").attr('disabled', true);
 
 		localStorage.setItem("ip-address",remoteAddr);
