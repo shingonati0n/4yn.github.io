@@ -3,6 +3,15 @@ jQuery(function($){
 	var WebSocket = window.WebSocket || null;
 	var Deferred = $.Deferred.bind($);
 
+	$('#ip-address').val(localStorage.getItem("ip-address"))
+	$('#port').val(localStorage.getItem("port"))
+	if($('#ip-address').val()==''){
+		$('#ip-address').val("localhost")
+	}
+	if($('#port').val()==''){
+		$('#port').val("9001")
+	}
+
 	function enableFullScreen() {
 	  if (!document.fullscreenElement &&    // alternative standard method
 	      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
@@ -65,6 +74,9 @@ jQuery(function($){
 		var remoteAddr = $('#ip-address').val();
 		var remotePort = $('#port').val();
 		$("#connect, #ip-address, #port").attr('disabled', true);
+
+		localStorage.setItem("ip-address",remoteAddr);
+		localStorage.setItem("port",remotePort);
 
 		connector.connect(remoteAddr, remotePort).done(function(){
 			$('#setup').hide();

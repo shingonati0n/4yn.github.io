@@ -33,6 +33,9 @@ body{
 	font-family: segled, monospace;
 	font-size: 4vw;
 }
+#ip-address:disabled{
+	color: grey;
+}
 
 #port{
 	background: black;
@@ -42,6 +45,9 @@ body{
 	font-family: segled, monospace;
 	font-size: 4vw;
 }
+#port:disabled{
+	color: grey;
+}
 
 #connect{
 	background: black;
@@ -49,6 +55,9 @@ body{
 	color: white;
 	font-family: segled, monospace;
 	font-size: 4vw;
+}
+#connect:disabled{
+	color: grey;
 }
 
 #ticker{
@@ -78,4 +87,12 @@ body{
 	font-size: 20vw;
 	text-shadow: 0 0 3vw #100;
 	z-index: -1;
+}
+
+#debug{
+	position: absolute;
+	color: white;
+	font-family: monospace;
+	font-size: 2vw;
+	left:0; bottom:0;
 }
