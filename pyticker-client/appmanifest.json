@@ -18,5 +18,5 @@
   "display": "fullscreen",
   "orientation": "landscape",
   "background_color": "black",
-  "theme_color": "black"
+  "theme_color": "red"
 }

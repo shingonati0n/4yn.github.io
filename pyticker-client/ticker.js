@@ -58,7 +58,9 @@ jQuery(function($){
 
 	$('#connect').click(function openConnection(){
 		setTimeout(function(){$('body').scrollTop(1);}, 500);
-		enableFullScreen()
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+			enableFullScreen();
+		}
 
 		var remoteAddr = $('#ip-address').val();
 		var remotePort = $('#port').val();

@@ -16,13 +16,13 @@ body{
 	position: absolute;
 	margin: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
-	height: 6vh;
+	height: 4vw;
     text-align: center;
     vertical-align: middle;
     border-style: none;
 	color: white;
     font-family: segled, monospace;
-	font-size: 4vh;
+	font-size: 4vw;
 }
 
 #ip-address{
@@ -31,7 +31,7 @@ body{
 	color: white;
 	text-align: right;
 	font-family: segled, monospace;
-	font-size: 4vh;
+	font-size: 4vw;
 }
 
 #port{
@@ -40,7 +40,7 @@ body{
 	color: white;
 	text-align: left;
 	font-family: segled, monospace;
-	font-size: 4vh;
+	font-size: 4vw;
 }
 
 #connect{
@@ -48,34 +48,34 @@ body{
 	border-style: none;
 	color: white;
 	font-family: segled, monospace;
-	font-size: 4vh;
+	font-size: 4vw;
 }
 
 #ticker{
 	position: absolute;
 	margin: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
-	height: 32vh;
+	height: 22vw;
     text-align: center;
     vertical-align: middle;
     border-style: none;
 	color: red;
     font-family: segled, monospace;
-	font-size: 30vh;
-	text-shadow: 0 0 3vh red;
+	font-size: 20vw;
+	text-shadow: 0 0 3vw red;
 }
 
 #ticker-ghost{
 	position: absolute;
 	margin: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
-	height: 32vh;
+	height: 22vw;
     text-align: center;
     vertical-align: middle;
     border-style: none;
 	color: #100;
     font-family: segled, monospace;
-	font-size: 30vh;
-	text-shadow: 0 0 3vh #100;
+	font-size: 20vw;
+	text-shadow: 0 0 3vw #100;
 	z-index: -1;
 }
